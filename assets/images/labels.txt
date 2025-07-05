@@ -1,0 +1,3 @@
+0 Dry
+1 Combination
+2 Oily
