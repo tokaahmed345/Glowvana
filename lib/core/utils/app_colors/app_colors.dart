@@ -12,5 +12,11 @@ class AppColors {
  static const brownRosy= Color(0xffdcbeb6);
 static const beige=Color(0xfffaf0e6);
 static const orangeDark=Color(0xff4b4544);
+static const brown=Color(0xff583d29);
+ static const brownAccent  =Color(0xFF7B3F00);
+static const brownOrange= Color(0xFFBA4C14);
+
+ 
+
 
 }

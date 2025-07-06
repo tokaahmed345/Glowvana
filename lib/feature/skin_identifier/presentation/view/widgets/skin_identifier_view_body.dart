@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
-import 'package:glowvana/feature/skin_identifier/presentation/view/widgets/custom_elevated_button.dart';
+import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view/widgets/pick_image.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view/widgets/skin_type_button.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view_model/cubits/cubit/detect_and_pick_image.dart';

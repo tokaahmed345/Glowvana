@@ -4,10 +4,10 @@ import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/validators/validators.dart';
+import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
 import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_dialog.dart';
 import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_text_field.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/sign_up_cubit/sign_up_cubit.dart';
-import 'package:glowvana/feature/skin_identifier/presentation/view/widgets/custom_elevated_button.dart';
 import 'package:go_router/go_router.dart';
 class SignUpBodyView extends StatefulWidget {
   const SignUpBodyView({super.key});

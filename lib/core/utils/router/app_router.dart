@@ -5,6 +5,9 @@ import 'package:glowvana/feature/Auth/presentation/view/log_in.dart';
 import 'package:glowvana/feature/Auth/presentation/view/sing_up.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/login_cubit/log_in_cubit.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/sign_up_cubit/sign_up_cubit.dart';
+import 'package:glowvana/feature/home/presentation/view/home_view.dart';
+import 'package:glowvana/feature/home/presentation/view/routine_step_details.dart';
+import 'package:glowvana/feature/home/presentation/view/widgets/routine_steps.dart';
 import 'package:glowvana/feature/onboarding/presentation/view/onboarding_view.dart';
 import 'package:glowvana/feature/onboarding/presentation/view/widgets/page_view_on_boarding.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view/skin_identifier_view.dart';
@@ -41,6 +44,7 @@ class AppRouter {
           child: const SingUpView(),
         ),
       ),
+      
       GoRoute(
         path: AppScreens.logIn,
         builder: (context, state) => BlocProvider(
@@ -48,6 +52,16 @@ class AppRouter {
           child: const LogInView(),
         ),
       ),
-    ],
+    GoRoute(
+        path: AppScreens.home,
+        builder: (context, state) => const HomeView(),
+      ),
+    GoRoute(
+        path: AppScreens.routineDetails,
+        builder: (context, state) => const RoutineStepDetailsView(),
+      ),
+    
+    ]
+    ,
   );
 }
