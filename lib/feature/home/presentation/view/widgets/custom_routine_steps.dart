@@ -1,28 +1,59 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/routine_steps.dart';
-
+import 'package:glowvana/feature/home/presentation/view_model/cubit/routine_steps_cubit.dart';
+import 'package:go_router/go_router.dart';
 class CustomRoutineStepsList extends StatelessWidget {
-  const CustomRoutineStepsList({
-    super.key,
-  });
+  const CustomRoutineStepsList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
-      child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
-          separatorBuilder: (context, index) {
-            return const SizedBox(height: 10);
-          },
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return const RoutineSteps(
-              stepNumber: '1',
-              stepTitle: 'Clenńs',
-              description: 'Céranser\nCrannser',
-            );
-          }),
+    return BlocBuilder<RoutineStepsCubit, RoutineStepsState>(
+      builder: (context, state) {
+        
+        if (state is RoutineStepsSuccess) {
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                
+                final steps = state.routines[index];
+
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                 
+                  child: RoutineSteps(
+                    onTap: () {
+                      GoRouter.of(context).push(AppScreens.routineDetails, extra: steps);
+                    },
+                    
+                    image: steps.imageUrl,
+                    stepNumber: steps.stepOrder.toString(),
+                    stepTitle: steps.title,
+                    description:steps.description,
+                  ),
+                );
+              },
+              childCount: state.routines.length,
+            ),
+          );
+        } else if (state is RoutineStepsFailure) {
+          return SliverToBoxAdapter(
+            child: Center(
+              child: Text(
+                state.errorMessage,
+                style:const  TextStyle(color: Colors.red),
+              ),
+            ),
+          );
+        } else {
+          return const SliverToBoxAdapter(
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+      },
     );
   }
 }

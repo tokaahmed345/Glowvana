@@ -2,19 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
-import 'package:glowvana/feature/home/presentation/view/widgets/bullet_point.dart';
+import 'package:glowvana/feature/home/data/models/routine_model.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/icon_elevated_button.dart';
 
 class StepsOfUse extends StatelessWidget {
   const StepsOfUse({
-    super.key,
+    super.key, required this.routineModel,
   });
+  final RoutineModel routineModel;
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      right: 10,
-      left: 10,
+      right: 3,
+      left: 3,
       bottom: 10,
       child: Container(
         height: MediaQuery.of(context).size.height*.5,
@@ -30,11 +31,11 @@ class StepsOfUse extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
              Text(
-              "Step 3: Serum",
+              "Step ${routineModel.stepOrder}: ${routineModel.title}",
               style:AppStyle.text24.copyWith(color:  AppColors.brownOrange,)
             ),
              Text(
-              "Niacinamide 10% + Zinc",
+              routineModel.description,
               style: AppStyle.text16.copyWith(color: AppColors.black.withOpacity(.8),)
 
             ),
@@ -42,11 +43,20 @@ class StepsOfUse extends StatelessWidget {
               "Why you need this:",
               style: AppStyle.text24.copyWith(color: AppColors.black)
             ),
-            const BulletPoint(text: "Apply 2 drops after toner"),
-            const BulletPoint(text: "Gently massage into skin"),
-            const BulletPoint(text: "Wait 1–2 min before next step"),
+              Text(
+              routineModel.why,
+        style: AppStyle.text16.copyWith(fontSize: 16,color:  AppColors.black)
+            ),
+               Text(
+              "How To Use :",
+              style: AppStyle.text24.copyWith(color: AppColors.black)
+            ),
+             Text(routineModel.howTo,style: AppStyle.text16.copyWith(fontSize: 16,color:  AppColors.black),
+),
+           
             const SizedBox(height: 10),
-           const  IconElevatedButton(),
+             IconElevatedButton(routineModel: routineModel
+             ,),
           
           ]
           ,

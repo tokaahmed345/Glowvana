@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
+import 'package:glowvana/feature/home/data/models/routine_model.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/custom_routine_steps.dart';
 
 class HomeBodyView extends StatelessWidget {
-  const HomeBodyView({super.key});
-
+  const HomeBodyView({super.key,  this.routineModel});
+final RoutineModel ? routineModel;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,7 +21,9 @@ class HomeBodyView extends StatelessWidget {
         Positioned.fill(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16),
-            child: CustomScrollView(slivers: [
+            child: CustomScrollView(
+              physics:const  BouncingScrollPhysics(),
+              slivers: [
               SliverToBoxAdapter(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,8 +55,10 @@ class HomeBodyView extends StatelessWidget {
                     ),
                   ],
                 ),
+            
               ),
-              const CustomRoutineStepsList()
+                     const CustomRoutineStepsList()
+
             ]),
           ),
         )
