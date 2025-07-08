@@ -11,7 +11,9 @@ class HomeRepoImpl  extends HomeRepo{
   @override
   Future<Either<FirebaseErrorHandler, List<RoutineModel>>> fetchRoutineSteps({required String skinType, required String routineType}) async{
 try {
+
   final snapshot= await firestore.collection('skin_routines').where('skinType',isEqualTo:skinType).where('routineType',isEqualTo:routineType).orderBy('stepOrder').get();
+  
     return right(snapshot.docs.map((docs)=>RoutineModel.fromJson(docs.id, docs.data())).toList()) ;
 } on FirebaseException catch (e) {
 return left(FirebaseErrorHandler(e.code));

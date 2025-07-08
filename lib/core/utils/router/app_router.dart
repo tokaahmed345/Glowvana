@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
@@ -18,6 +19,26 @@ import 'package:go_router/go_router.dart';
 
 class AppRouter {
   static final router = GoRouter(
+    redirect: (context, state) {
+      final user = getIt.get<FirebaseAuth>().currentUser;
+      final loggingIn = state.fullPath == AppScreens.logIn ||
+          state.fullPath == AppScreens.signUp ||
+          state.fullPath == AppScreens.splash ||
+          state.fullPath == AppScreens.onBoarding ||
+          state.fullPath == AppScreens.skinIdentifier ||
+
+          state.fullPath == AppScreens.pageView;
+
+      if (user == null && !loggingIn) {
+        return AppScreens.splash;
+      }
+
+      if (user != null && state.fullPath == AppScreens.splash) {
+        return AppScreens.home;
+      }
+
+      return null;
+    },
     routes: [
       GoRoute(
         path: AppScreens.onBoarding,
@@ -34,7 +55,7 @@ class AppRouter {
       GoRoute(
         path: AppScreens.skinIdentifier,
         builder: (context, state) => BlocProvider(
-          create: (context) => PickAndDetectImage(),
+          create: (context) => getIt.get<PickAndDetectImage>(),
           child: const SkinIdentifierView(),
         ),
       ),
@@ -53,21 +74,20 @@ class AppRouter {
         ),
       ),
       GoRoute(
-        path: AppScreens.home,
-        builder: (context, state) => BlocProvider(
-          create: (context) =>
-
-              getIt.get<RoutineStepsCubit>()..getRoutineSteps('combination', 'morning'),
-          child:const   HomeView(),
-        ),
-      ),
+          path: AppScreens.home,
+          builder: (context, state) => BlocProvider(
+                create: (context) => getIt.get<RoutineStepsCubit>(),
+                child: const HomeView(),
+              )),
       GoRoute(
         path: AppScreens.routineDetails,
         builder: (context, state) {
           final steps = state.extra as RoutineModel;
           return BlocProvider(
             create: (context) => getIt.get<RoutineStepsCubit>(),
-            child:  RoutineStepDetailsView(routineModel: steps,),
+            child: RoutineStepDetailsView(
+              routineModel: steps,
+            ),
           );
         },
       ),

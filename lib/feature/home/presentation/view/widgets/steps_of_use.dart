@@ -13,6 +13,7 @@ class StepsOfUse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Positioned(
       right: 3,
       left: 3,

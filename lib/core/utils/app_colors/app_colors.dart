@@ -16,7 +16,11 @@ static const brown=Color(0xff583d29);
  static const brownAccent  =Color(0xFF7B3F00);
 static const brownOrange= Color(0xFFBA4C14);
 
- 
+   static const darkBlue = Color(0xFF1E1D2F);
+  static const navyBlue = Color(0xFF2C2B3C);
+  static const moonGlow = Color(0xFFDADADA);
+  static const softPurple = Color(0xFF8A70D6);
+  static const lavenderGlow = Color(0xFFB89EFF);
 
 
 }

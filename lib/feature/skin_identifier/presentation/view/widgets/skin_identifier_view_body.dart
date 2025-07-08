@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
+import 'package:glowvana/core/utils/service_locator/service_locator.dart';
+import 'package:glowvana/core/utils/storage/hive_helper.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view/widgets/pick_image.dart';
@@ -19,17 +21,21 @@ class SkinIdentifierViewBody extends StatefulWidget {
 class _SkinIdentifierViewBodyState extends State<SkinIdentifierViewBody> {
   String? selectedType;
   bool isPicked = false;
+  final  UserSettingsStorage userSettingsStorage=getIt.get<UserSettingsStorage>();
 
-  void onSkinTypeSelected(String type) {
+  void onSkinTypeSelected(String type)async {
     setState(() {
       selectedType = type;
     });
+   await userSettingsStorage.saveSkinType(type.toLowerCase());
+
   }
 
   void pickedImage(bool pick) {
     setState(() {
       isPicked = pick;
     });
+
   }
 
   bool get isEnabeledButton => selectedType != null || isPicked;

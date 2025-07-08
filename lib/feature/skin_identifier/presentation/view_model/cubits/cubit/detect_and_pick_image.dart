@@ -2,16 +2,18 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:glowvana/core/utils/storage/hive_helper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:image/image.dart' as img;
 part 'image_picker_state.dart';
 class PickAndDetectImage extends Cubit<PickAndDetectState> {
-  PickAndDetectImage() : super(ImagePickerInitial()) {
+  PickAndDetectImage(this.userSettingsStorage) : super(ImagePickerInitial()) {
     loadModel();
   }
   final ImagePicker _imagePicker = ImagePicker();
   late Interpreter _interpreter;
+final UserSettingsStorage userSettingsStorage;
   final List<String> labels = ['Dry', 'Combination', 'Oily'];
   final int inputSize = 224;
   Future<void> loadModel() async {
@@ -48,7 +50,7 @@ class PickAndDetectImage extends Cubit<PickAndDetectState> {
     final maxIndex = prediction
         .indexWhere((v) => v == prediction.reduce((a, b) => a > b ? a : b));
     final predictedLabel = labels[maxIndex];
-
+  await userSettingsStorage.saveSkinType(predictedLabel.toLowerCase()); // هنا بنخزن النوع المختار
     emit(PredictionResult(imageFile, predictedLabel));
   }
   Uint8List imageToByteListFloat32(img.Image image) {
