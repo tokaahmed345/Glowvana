@@ -4,13 +4,20 @@ import 'package:glowvana/feature/home/presentation/view/widgets/routine_step_det
 
 class RoutineStepDetailsView extends StatelessWidget {
   const RoutineStepDetailsView({super.key, required this.routineModel});
-final RoutineModel routineModel;
+  final RoutineModel routineModel;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Container(
-      decoration: BoxDecoration(
+    return SafeArea(
+        child: Container(
+            decoration: BoxDecoration(
+
               borderRadius: BorderRadius.circular(32),
-      ),
-      child:  Scaffold(body: RoutineStepDetailsViewBody(routineModel:routineModel ,),)));
+            ),
+            child: Scaffold(
+
+              body: RoutineStepDetailsViewBody(
+                routineModel: routineModel,
+              ),
+            )));
   }
 }

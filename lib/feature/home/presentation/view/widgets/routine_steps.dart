@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/cashed_image_from_hive.dart';
@@ -37,14 +36,14 @@ class RoutineSteps extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
               decoration: BoxDecoration(
-                color: theme.colorScheme.primary,  
+                color: theme.colorScheme.primary,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Text(
                 'Step\n$stepNumber',
                 textAlign: TextAlign.center,
                 style: AppStyle.text24.copyWith(
-                  color: theme.colorScheme.onPrimary,  
+                  color: theme.colorScheme.onPrimary,
                   fontSize: 20,
                 ),
               ),
@@ -57,14 +56,14 @@ class RoutineSteps extends StatelessWidget {
                   Text(
                     stepTitle,
                     style: theme.textTheme.bodyLarge?.copyWith(
-                     fontWeight: FontWeight.bold,
-color: theme.colorScheme.primary
-                    ),
+                        fontWeight: FontWeight.bold,
+                        color: theme.colorScheme.primary),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     description,
-                    style: theme.textTheme.bodyMedium,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.bodySmall,
                   ),
                 ],
               ),
@@ -80,4 +79,3 @@ color: theme.colorScheme.primary
     );
   }
 }
-

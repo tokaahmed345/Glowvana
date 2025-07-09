@@ -15,12 +15,15 @@ final String? Function(String?)? validator;
   Widget build(BuildContext context) {
     return 
     TextFormField(
+      style: Theme.of(context).textTheme.bodyMedium,
       validator: validator,
       controller: controller,
       obscureText: obscureText,
       keyboardType:keyboardType ,
       decoration: InputDecoration(
         hintText: hint,
+        
+        
         errorBorder:outlineTextFieldBorder() ,
         border: outlineTextFieldBorder(),
         

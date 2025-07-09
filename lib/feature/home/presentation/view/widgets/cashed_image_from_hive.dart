@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
-import 'package:glowvana/feature/home/data/helpers/cashe_image_hive.dart';
+import 'package:glowvana/core/utils/helpers/cache_image/cache_image_hive.dart';
 
 class CachedImageFromHive extends StatefulWidget {
   final String imageUrl;
