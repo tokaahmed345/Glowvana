@@ -15,6 +15,7 @@ static const orangeDark=Color(0xff4b4544);
 static const brown=Color(0xff583d29);
  static const brownAccent  =Color(0xFF7B3F00);
 static const brownOrange= Color(0xFFBA4C14);
+static const backGround= Color(0xffF0CBB0);
 
    static const darkBlue = Color(0xFF1E1D2F);
   static const navyBlue = Color(0xFF2C2B3C);

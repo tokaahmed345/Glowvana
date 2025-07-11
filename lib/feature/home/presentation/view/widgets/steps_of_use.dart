@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/feature/home/data/models/routine_model.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/icon_elevated_button.dart';
-
 class StepsOfUse extends StatelessWidget {
   const StepsOfUse({
     super.key,
     required this.routineModel,
   });
   final RoutineModel routineModel;
-
   @override
   Widget build(BuildContext context) {
     final themeType = Theme.of(context);

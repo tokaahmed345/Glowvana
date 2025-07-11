@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:glowvana/core/utils/firebasefailure/firebase_failure.dart';
+import 'package:glowvana/core/utils/service_locator/service_locator.dart';
 import 'package:glowvana/feature/Auth/data/model/auth_model.dart';
 import 'package:glowvana/feature/Auth/data/repo/auth_repo.dart';
+import 'package:http/http.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuth _firebaseAuth;
@@ -38,5 +40,16 @@ class AuthRepoImpl extends AuthRepo {
     } catch (e) {
       return Left(FirebaseErrorHandler("unexpected Error: ${e.toString()}"));
     }
+  }
+  
+  @override
+  Future<Either<FirebaseErrorHandler, Unit>> signOut() async{
+try{
+await getIt.get<FirebaseAuth>().signOut();
+return right(unit);
+}catch(e){
+  return left(FirebaseErrorHandler(" Oops !please try again !${e.toString()}"));
+}
+
   }
 }

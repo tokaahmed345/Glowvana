@@ -48,18 +48,19 @@ class GlassBottomNavBar extends StatelessWidget {
                   size: 40,
                 ),
                 label: 'Masks'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.local_drink,
-                  size: 40,
-                ),
-                label: 'Juices'),
+        
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.track_changes,
                   size: 40,
                 ),
                 label: 'Tracker'),
+                    BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  size: 40,
+                ),
+                label: 'Profile'),
           ],
         ),
       ),

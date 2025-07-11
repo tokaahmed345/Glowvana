@@ -10,6 +10,7 @@ import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
 import 'package:glowvana/feature/home/data/models/routine_model.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/custom_routine_steps.dart';
 import 'package:glowvana/feature/home/presentation/view_model/cubit/routine_steps_cubit.dart';
+import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_cubit.dart';
 
 class HomeBodyView extends StatelessWidget {
   const HomeBodyView({super.key, this.routineModel});
@@ -65,6 +66,8 @@ class HomeBodyView extends StatelessWidget {
                                           cubit.getRoutineSteps(
                                               skinType, 'morning');
                                           themeCubit.switchToMorning();
+                                                                                      getIt<RoutineTrackerCubit>().loadRoutine(skinType: skinType, routineType: 'morning');
+
                                         },
                                         color: cubit.currentRoutine == 'morning'
                                             ? AppColors.brown
@@ -77,6 +80,8 @@ class HomeBodyView extends StatelessWidget {
                                     child: CustomElevatedButton(
                                         text: "Night Routine",
                                         onPressed: () {
+                                            
+                                              getIt<RoutineTrackerCubit>().loadRoutine(skinType: skinType, routineType: 'night');
                                           context
                                               .read<RoutineStepsCubit>()
                                               .getRoutineSteps(

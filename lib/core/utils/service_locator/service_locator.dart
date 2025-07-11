@@ -6,6 +6,7 @@ import 'package:glowvana/core/utils/theme/theme_cubit/theme_cubit.dart';
 import 'package:glowvana/feature/Auth/data/repo/auth_repo.dart';
 import 'package:glowvana/feature/Auth/data/repo/auth_repo_impl.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/login_cubit/log_in_cubit.dart';
+import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/sign_out_cubit/sign_out_cubit.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/sign_up_cubit/sign_up_cubit.dart';
 import 'package:glowvana/core/utils/helpers/cache_image/cache_image_hive.dart';
 import 'package:glowvana/feature/home/data/repos/home_repo.dart';
@@ -15,6 +16,9 @@ import 'package:glowvana/feature/masks/data/repos/mask_repo.dart';
 import 'package:glowvana/feature/masks/data/repos/repo_impl.dart';
 import 'package:glowvana/feature/masks/presentation/view_model/cubit/mask_skin_cubit.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view_model/cubits/cubit/detect_and_pick_image.dart';
+import 'package:glowvana/feature/tracking/data/repos/tracker_repo.dart';
+import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl.dart';
+import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_cubit.dart';
 
 final getIt = GetIt.instance;
 void setUp(){
@@ -31,5 +35,8 @@ getIt.registerLazySingleton<ImageCaching>(()=>ImageCaching());
 getIt.registerLazySingleton<ThemeCubit>(()=>ThemeCubit());
 getIt.registerLazySingleton<MaskRepo>(()=>MaskRepoImpl(getIt.get<FirebaseFirestore>()));
 getIt.registerFactory<MaskSkinCubit>(()=>MaskSkinCubit(getIt.get<MaskRepo>()));
+getIt.registerLazySingleton<TrackerRepo>(()=>TrackerRepoImpl(getIt.get<FirebaseFirestore>()));
+getIt.registerFactory<RoutineTrackerCubit>(()=>RoutineTrackerCubit(getIt.get<TrackerRepo>()));
+getIt.registerFactory<SignOutCubit>(()=>SignOutCubit(getIt.get<AuthRepo>()));
 
 }

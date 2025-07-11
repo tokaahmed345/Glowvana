@@ -5,5 +5,6 @@ import 'package:glowvana/feature/Auth/data/model/auth_model.dart';
 abstract class AuthRepo {
 Future<Either<FirebaseErrorHandler,AuthModel>>signUp(String email,String password,String userName);
 Future<Either<FirebaseErrorHandler,AuthModel>>logIn(String email,String password);
+Future<Either<FirebaseErrorHandler,Unit>>signOut();
 
 }

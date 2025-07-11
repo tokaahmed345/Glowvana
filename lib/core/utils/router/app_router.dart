@@ -76,6 +76,7 @@ class AppRouter {
       GoRoute(
           path: AppScreens.home,
           builder: (context, state) => BlocProvider(
+            
                 create: (context) => getIt.get<RoutineStepsCubit>(),
                 child: const HomeView(),
               )),

@@ -16,7 +16,9 @@ void main() async {
   );
   setUp();
   await Hive.initFlutter();
+
   await Hive.openBox(UserSettingsStorage.boxName);
+
   runApp(const MyApp());
 }
 
