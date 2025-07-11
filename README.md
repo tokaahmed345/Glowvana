@@ -7,68 +7,22 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
 <hr>
 
 <h2>📸 Screenshots</h2>
-<table>
-  <tr>
-    <td align="center">
-      <img src="screenshots/Screenshot_1752080789.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-    <td align="center">
-      <img src="screenshots/Screenshot_1752080795.png" width="200"><br>
-      <strong>Routine Steps</strong>
-    </td>
-    <td align="center">
-      <img src="screenshots/Screenshot_1752080798.png" width="200"><br>
-      <strong>Add Product</strong>
-    </td>
- <td align="center">
-      <img src="screenshots/Screenshot_1752080801.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752080805.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752081034.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-      <td align="center">
-      <img src="screenshots/Screenshot_1752081040.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-      <td align="center">
-      <img src="screenshots/Screenshot_1752081053.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752081084.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-       <td align="center">
-      <img src="screenshots/Screenshot_1752081089.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752081098.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752081106.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-      </td>
-     <td align="center">
-      <img src="screenshots/Screenshot_1752081112.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-    <td align="center">
-      <img src="screenshots/Screenshot_1752081118.png" width="200"><br>
-      <strong>Home Screen</strong>
-    </td>
-  </tr>
-</table>
-
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="screenshots/Screenshot_1752080789.png" width="200">
+  <img src="screenshots/Screenshot_1752080795.png" width="200">
+  <img src="screenshots/Screenshot_1752080798.png" width="200">
+  <img src="screenshots/Screenshot_1752080801.png" width="200">
+  <img src="screenshots/Screenshot_1752080805.png" width="200">
+  <img src="screenshots/Screenshot_1752081034.png" width="200">
+  <img src="screenshots/Screenshot_1752081040.png" width="200">
+  <img src="screenshots/Screenshot_1752081053.png" width="200">
+  <img src="screenshots/Screenshot_1752081084.png" width="200">
+  <img src="screenshots/Screenshot_1752081089.png" width="200">
+  <img src="screenshots/Screenshot_1752081098.png" width="200">
+  <img src="screenshots/Screenshot_1752081106.png" width="200">
+  <img src="screenshots/Screenshot_1752081112.png" width="200">
+  <img src="screenshots/Screenshot_1752081118.png" width="200">
+</div>
 <hr>
 
 <h2>✨ Features</h2>
