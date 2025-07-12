@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/feature/masks/presentation/view/widgets/custom_mask_list.dart';
 
 class MaskViewBody extends StatelessWidget {
@@ -8,7 +9,7 @@ class MaskViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme=Theme.of(context);
     final isNight=theme.brightness==Brightness.dark;
-    final backgroundImage=isNight?"assets/images/night_mask_background.png":'assets/images/background_masks.png';
+    final backgroundImage=isNight?AppAssets.nightBackgroundMasks:AppAssets.morningBackgroundMasks;
 
 
     return Stack(

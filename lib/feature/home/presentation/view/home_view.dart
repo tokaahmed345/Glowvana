@@ -29,51 +29,50 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     final skinType = userSettingsStorage.getSkinType();
-final routineType = userSettingsStorage.getRoutineType();
+    final routineType = userSettingsStorage.getRoutineType();
 
     context.read<RoutineStepsCubit>().getRoutineSteps(skinType, routineType);
     routineTrackerCubit = getIt.get<RoutineTrackerCubit>();
-     routineTrackerCubit.loadRoutine(skinType: skinType, routineType: routineType);
+    routineTrackerCubit.loadRoutine(
+        skinType: skinType, routineType: routineType);
     screens = [
       HomeBodyView(routineModel: widget.routineModel),
       const MaskView(),
       const TrackerView(),
       const ProfileView(),
-
     ];
   }
 
-
   @override
-Widget build(BuildContext context) {
-  return BlocListener<RoutineStepsCubit, RoutineStepsState>(
-    listener: (context, state) {
-      if (state is RoutineStepsSuccess) {
-        final routineType = context.read<RoutineStepsCubit>().currentRoutine;
-        final skinType = userSettingsStorage.getSkinType();
-        routineTrackerCubit.loadRoutine(skinType: skinType, routineType: routineType);
-      }
-    },
-    child: SafeArea(
-      child: Scaffold(
-        extendBody: true,
-        body: currentIndex == 2
-            ? BlocProvider.value(
-                value: routineTrackerCubit,
-                child: const TrackerView(),
-              )
-            : screens[currentIndex],
-        bottomNavigationBar: GlassBottomNavBar(
-          currentIndex: currentIndex,
-          onTap: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
+  Widget build(BuildContext context) {
+    return BlocListener<RoutineStepsCubit, RoutineStepsState>(
+      listener: (context, state) {
+        if (state is RoutineStepsSuccess) {
+          final routineType = context.read<RoutineStepsCubit>().currentRoutine;
+          final skinType = userSettingsStorage.getSkinType();
+          routineTrackerCubit.loadRoutine(
+              skinType: skinType, routineType: routineType);
+        }
+      },
+      child: SafeArea(
+        child: Scaffold(
+          extendBody: true,
+          body: currentIndex == 2
+              ? BlocProvider.value(
+                  value: routineTrackerCubit,
+                  child: const TrackerView(),
+                )
+              : screens[currentIndex],
+          bottomNavigationBar: GlassBottomNavBar(
+            currentIndex: currentIndex,
+            onTap: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+          ),
         ),
       ),
-    ),
-  );
-}
-
+    );
   }
+}

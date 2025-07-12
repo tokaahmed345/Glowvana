@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
-import 'package:glowvana/core/utils/styles/app_style.dart';
+
 class CustomTrackMasks extends StatelessWidget {
   const CustomTrackMasks({
     super.key,
@@ -18,7 +18,7 @@ class CustomTrackMasks extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.teracotta),
+        border: Border.all(color: AppColors.brown),
       ),
       child: Row(
         children: [
@@ -27,22 +27,28 @@ class CustomTrackMasks extends StatelessWidget {
               value: isChecked,
               onChanged: onChanged,
               contentPadding: EdgeInsets.zero,
-              title:  Text(
-                "Used mask this week?",
-                style: AppStyle.text24.copyWith(color: AppColors.brown,fontSize: 18)
-              ),
+              title: Text("Used mask this week?",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontSize: 18, fontWeight: FontWeight.bold)),
               subtitle: Text(
-                isChecked ? "Well done! 🌸" : "Don't forget your weekly mask! 💆‍♀️",
-                style: AppStyle.text16.copyWith(color:  AppColors.brownAccent,fontWeight: FontWeight.bold,fontSize: 17)
-              ),
-              activeColor: AppColors.brownOrange,
+                  isChecked
+                      ? "Well done! 🌸"
+                      : "Don't forget your weekly mask! 💆‍♀️",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(fontSize: 16, color: AppColors.black)),
+              activeColor: Theme.of(context).colorScheme.primary,
               controlAffinity: ListTileControlAffinity.leading,
             ),
           ),
-           Image.asset(
-            "assets/images/mini_mask.png",fit: BoxFit.cover,
-            width: MediaQuery.of(context).size.width*.2,
-            height: MediaQuery.of(context).size.height*.1,
+          Image.asset(
+            AppAssets.miniMask,
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width * .2,
+            height: MediaQuery.of(context).size.height * .1,
           ),
         ],
       ),

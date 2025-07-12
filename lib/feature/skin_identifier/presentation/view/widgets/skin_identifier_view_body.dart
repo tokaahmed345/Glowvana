@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
@@ -51,7 +52,7 @@ class _SkinIdentifierViewBodyState extends State<SkinIdentifierViewBody> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              "assets/images/back.jpg",
+             AppAssets.skinIdentifierBackground,
               fit: BoxFit.cover,
             ),
           ),

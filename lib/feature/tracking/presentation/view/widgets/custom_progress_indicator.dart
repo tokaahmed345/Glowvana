@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
-import 'package:glowvana/core/utils/styles/app_style.dart';
 
 class CustomProgressIndicator extends StatelessWidget {
   final double progress;
@@ -20,7 +19,7 @@ class CustomProgressIndicator extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.teracotta),
+        border: Border.all(color: AppColors.brown),
       ),
       child: Row(
         children: [
@@ -32,29 +31,27 @@ class CustomProgressIndicator extends StatelessWidget {
                 height: 100,
                 child: CircularProgressIndicator(
                   value: progress.clamp(0.0, 1.0),
-                  strokeWidth: 10,
-                  backgroundColor:AppColors.brownRosy,
-                  valueColor:
-                      const AlwaysStoppedAnimation(AppColors.teracotta),
+                  strokeWidth: 14,
+                  backgroundColor: AppColors.brownRosy,
+                  valueColor: AlwaysStoppedAnimation(Theme.of(context)
+                      .progressIndicatorTheme
+                      .circularTrackColor),
                 ),
               ),
               Text(
                 "${(progress * 100).round()}%",
-                style: AppStyle.text16.copyWith(
-                  color: AppColors.brown,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontSize: 30),
               ),
             ],
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 30),
           Text(
             "$completed of $total steps\ncompleted",
-            style: AppStyle.text16.copyWith(
-              color: AppColors.brown,
-              fontSize: 20,
-            ),
+            style:
+                Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 27),
           ),
         ],
       ),

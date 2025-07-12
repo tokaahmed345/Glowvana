@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,6 +22,6 @@ GoRouter.of(context).push(AppScreens.onBoarding);
   }
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/images/pic1.jpg",fit: BoxFit.cover,);
+    return Image.asset(AppAssets.splashLogo,fit: BoxFit.cover,);
   }
 }

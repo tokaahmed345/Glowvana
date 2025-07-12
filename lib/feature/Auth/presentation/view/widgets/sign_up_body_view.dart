@@ -1,19 +1,23 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/validators/validators.dart';
 import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
-import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_dialog.dart';
+import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_awesom_dialoge.dart';
 import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_text_field.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/sign_up_cubit/sign_up_cubit.dart';
 import 'package:go_router/go_router.dart';
+
 class SignUpBodyView extends StatefulWidget {
   const SignUpBodyView({super.key});
   @override
   State<SignUpBodyView> createState() => _SignUpBodyViewState();
 }
+
 class _SignUpBodyViewState extends State<SignUpBodyView> {
   bool isVisibilty = false;
   TextEditingController emailController = TextEditingController();
@@ -27,31 +31,28 @@ class _SignUpBodyViewState extends State<SignUpBodyView> {
     passwordController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return CustomDialog(
-                    title: 'Success',
-                    content: "Your account has been created successfully!",
-                    onOkPressed: () {
-                      GoRouter.of(context).push(AppScreens.logIn);
-                    });
-              });
+          CustomAwesomDialoge.show(
+            context: context,
+            title: 'Success',
+            description: 'Your account has been created successfully!',
+            dialogType: DialogType.success,
+            btnOkColor: AppColors.teracotta,
+            onOkPressed: () => GoRouter.of(context).go(AppScreens.logIn),
+          );
         } else if (state is SignUpFailure) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return CustomDialog(
-                  title: 'Registration Failed',
-                  content: state.errorMessage,
-                  onOkPressed: () => Navigator.pop(context),
-                );
-              });
+          CustomAwesomDialoge.show(
+            context: context,
+            title: 'Registration Failed',
+            description: state.errorMessage,
+            dialogType: DialogType.error,
+            btnOkColor: AppColors.teracotta,
+          );
         }
       },
       builder: (context, state) {
@@ -59,7 +60,7 @@ class _SignUpBodyViewState extends State<SignUpBodyView> {
           children: [
             Positioned.fill(
                 child: Image.asset(
-              'assets/images/background.jfif',
+              AppAssets.signUpBackground,
               fit: BoxFit.cover,
             )),
             Positioned.fill(
@@ -79,8 +80,7 @@ class _SignUpBodyViewState extends State<SignUpBodyView> {
                       height: 50,
                     ),
                     CustomTextFormField(
-                      validator: (value) =>
-                          Validators.validateUserName(value!),
+                      validator: (value) => Validators.validateUserName(value!),
                       controller: userNameController,
                       hint: 'Enter UserName',
                       icon: Icons.person_2_outlined,
@@ -89,8 +89,7 @@ class _SignUpBodyViewState extends State<SignUpBodyView> {
                       height: 40,
                     ),
                     CustomTextFormField(
-                      validator: (value) =>
-                          Validators.validateEmail(value!),
+                      validator: (value) => Validators.validateEmail(value!),
                       controller: emailController,
                       hint: 'Enter your Email',
                       icon: Icons.mail,
@@ -99,8 +98,7 @@ class _SignUpBodyViewState extends State<SignUpBodyView> {
                       height: 40,
                     ),
                     CustomTextFormField(
-                      validator: (value) =>
-                          Validators.validatePassword(value!),
+                      validator: (value) => Validators.validatePassword(value!),
                       controller: passwordController,
                       keyboardType: TextInputType.number,
                       onTap: () {

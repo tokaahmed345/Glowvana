@@ -1,11 +1,13 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/validators/validators.dart';
 import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
-import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_dialog.dart';
+import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_awesom_dialoge.dart';
 import 'package:glowvana/feature/Auth/presentation/view/widgets/custom_text_field.dart';
 import 'package:glowvana/feature/Auth/presentation/view_model/auth_cubits/login_cubit/log_in_cubit.dart';
 import 'package:go_router/go_router.dart';
@@ -35,14 +37,13 @@ class _LogInBodyViewState extends State<LogInBodyView> {
         if (state is LogInSuccess) {
           GoRouter.of(context).push(AppScreens.home);
         } else if (state is LogInFailure) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return CustomDialog(
-                    title: ' LogIn Failed ',
-                    content: state.errorMessage,
-                    onOkPressed: () => GoRouter.of(context).pop());
-              });
+          CustomAwesomDialoge.show(
+            context: context,
+            title: 'Login Failed',
+            description: state.errorMessage,
+            dialogType: DialogType.error,
+            btnOkColor: AppColors.teracotta,
+          );
         }
       },
       builder: (context, state) {
@@ -50,7 +51,7 @@ class _LogInBodyViewState extends State<LogInBodyView> {
           children: [
             Positioned.fill(
                 child: Image.asset(
-              'assets/images/background.jfif',
+              AppAssets.logInBackground,
               fit: BoxFit.cover,
             )),
             Positioned.fill(

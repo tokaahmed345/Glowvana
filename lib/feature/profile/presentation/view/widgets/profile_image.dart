@@ -1,16 +1,15 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/helpers/user_setting_storage/hive_helper.dart';
 
 class ProfileImageWidget extends StatefulWidget {
-  const ProfileImageWidget({super.key});
-
+const ProfileImageWidget({super.key});
   @override
   State<ProfileImageWidget> createState() => _ProfileImageWidgetState();
 }
-
 class _ProfileImageWidgetState extends State<ProfileImageWidget> {
   final picker = ImagePicker();
   final userSettings = UserSettingsStorage();
@@ -35,15 +34,15 @@ class _ProfileImageWidgetState extends State<ProfileImageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: _pickImage,
       child: CircleAvatar(
         radius: 60,
         backgroundImage: imagePath != null
             ? FileImage(File(imagePath!))
-            : const AssetImage("assets/images/default_user.png")
+            : const AssetImage(AppAssets.defaultUser)
                 as ImageProvider,
-        backgroundColor: AppColors.salmon,
+        backgroundColor: Theme.of(context).colorScheme.onPrimary
       ),
     );
   }

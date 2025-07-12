@@ -6,7 +6,6 @@ class UserSettingsStorage {
   static const routineTypeKey = 'routineType';
   static const lastRoutineLoadKey = 'lastRoutineLoadDate';
   static const selectedImage = 'imageSelected';
-
   final box = Hive.box(boxName);
 
   Future<void> saveRoutineType(String routineType) async {
@@ -22,13 +21,12 @@ class UserSettingsStorage {
   }
 
   String getSkinType() {
-    return box.get(skinTypeKey);
+    return box.get(skinTypeKey,defaultValue: 'dry');
   }
 
   Future<void> saveLastRoutine(DateTime date) async {
     await box.put(lastRoutineLoadKey, date.toIso8601String());
   }
-
   DateTime? getToday() {
     final saved = box.get(lastRoutineLoadKey);
     if (saved != null) {
@@ -36,26 +34,33 @@ class UserSettingsStorage {
     }
     return null;
   }
-
   bool getMaskUsedToday() {
     return box.get('maskUsed', defaultValue: false);
   }
-
   Future<void> setMaskUsedToday(bool value) async {
     await box.put('maskUsed', value);
   }
 
-// Future<void> initializeDefaults() async {
-//   final routineType = box.get(routineTypeKey);
-//   if (routineType == null) {
-//     await box.put(routineTypeKey, 'morning');
-//   }
 
-// }
+
+
 Future<void>saveSelectedImage(String imagePath)async{
 await box.put(selectedImage, imagePath);
 }
 String ? getImageSaved(){
   return box.get(selectedImage);
 }
+
+
+
+  Future<void> initializeDefaults() async {
+  if (!box.containsKey(routineTypeKey)) {
+    print("Routine type not found, setting to morning");
+    await box.put(routineTypeKey, 'morning');
+  } else {
+    print("Routine type found: ${box.get(routineTypeKey)}");
+  }
 }
+
+}
+

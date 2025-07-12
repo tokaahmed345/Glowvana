@@ -24,6 +24,10 @@ static const backGround= Color(0xffF0CBB0);
   static const lavenderGlow = Color(0xFFB89EFF);
      static const purble = Colors.purple;
 
+   static const green = Colors.green;
+   static const red = Colors.red;
+
+
 
 
 }

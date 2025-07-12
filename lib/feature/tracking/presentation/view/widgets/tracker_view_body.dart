@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
+import 'package:glowvana/core/utils/widgets/custom_background.dart';
 import 'package:glowvana/feature/tracking/presentation/view/widgets/custom_progress_indicator.dart';
 import 'package:glowvana/feature/tracking/presentation/view/widgets/custom_routine_card.dart';
 import 'package:glowvana/feature/tracking/presentation/view/widgets/custom_track_masks.dart';
@@ -12,12 +14,9 @@ class TrackerViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned.fill(
-          child: Image.asset(
-            "assets/images/background_tracker.jfif",
-            fit: BoxFit.fill,
-          ),
-        ),
+        const CustomBackgrounds(
+            morningBackgroundImage: AppAssets.backgroundTracker,
+            nightBackgroundImage: AppAssets.nightBackgroundTracker),
         Positioned.fill(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),

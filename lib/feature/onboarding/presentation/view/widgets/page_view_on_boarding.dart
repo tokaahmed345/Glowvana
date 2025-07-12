@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_screens/app_screens.dart';
 import 'package:glowvana/feature/onboarding/presentation/view/widgets/custom_page_view_ite.dart';
 import 'package:go_router/go_router.dart';
@@ -18,22 +19,10 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
        PageView(
         controller: _pageController,
         children: [
-          // CustomPageViewItem(
-          //   title: "Welcome to Glowvana",
-          //   description: "Discover the skincare routine that suits you.",
-          //   image: "assets/images/welcome.jpg",
-          //   onNext: () {
-          //     _pageController.nextPage(
-          //       duration: const Duration(milliseconds: 300),
-          //       curve: Curves.easeInOut,
-          //     );
-          //   },
-           
-          // ),
           CustomPageViewItem(
             title: "Test Your Skin Type",
             description: "You can use the scanner to detect your skin type.",
-            image: "assets/images/detect.jpg", 
+            image: AppAssets.onboardingFaceDetect, 
             onNext: () {
               _pageController.nextPage(
                 duration: const Duration(milliseconds: 300),
@@ -51,7 +40,7 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
             title: "Glow Naturally",
             description:
                 "Start fresh with natural skincare made for your skin type.",
-            image: "assets/images/fresh.jpg",
+            image: AppAssets.onboardingFresh,
             onNext: () {
               _pageController.nextPage(
                 duration: const Duration(milliseconds: 300),
@@ -68,7 +57,7 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
           CustomPageViewItem(
             title: "Start Your Routine",
             description: "Begin your skincare routine based on your skin type.",
-            image: "assets/images/photo.jpg",
+            image: AppAssets.onboardingImage,
             onNext: () {
               GoRouter.of(context).push(AppScreens.skinIdentifier);
             },

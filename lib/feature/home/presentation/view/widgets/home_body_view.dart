@@ -1,11 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/assets/app_assets.dart';
 import 'package:glowvana/core/utils/app_colors/app_colors.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
 import 'package:glowvana/core/utils/helpers/user_setting_storage/hive_helper.dart';
 import 'package:glowvana/core/utils/styles/app_style.dart';
 import 'package:glowvana/core/utils/theme/theme_cubit/theme_cubit.dart';
+import 'package:glowvana/core/utils/widgets/custom_background.dart';
 import 'package:glowvana/core/utils/widgets/custom_elevated_button.dart';
 import 'package:glowvana/feature/home/data/models/routine_model.dart';
 import 'package:glowvana/feature/home/presentation/view/widgets/custom_routine_steps.dart';
@@ -23,19 +25,11 @@ class HomeBodyView extends StatelessWidget {
     final userName = user?.displayName?.split(' ').first ?? "Beautiful";
     final themeCubit = context.read<ThemeCubit>();
     final themeType = Theme.of(context);
-    final isNight = themeType.brightness == Brightness.dark;
-    final backgroundImage = isNight
-        ? "assets/images/night_home_background.png"
-        : "assets/images/download (3).jfif";
+    
 
     return Stack(
       children: [
-        Positioned.fill(
-          child: Image.asset(
-            backgroundImage,
-            fit: BoxFit.fill,
-          ),
-        ),
+      const   CustomBackgrounds(nightBackgroundImage: AppAssets.nightHomeBackground,morningBackgroundImage: AppAssets.morningHomeBackground,),
         Positioned.fill(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16),
