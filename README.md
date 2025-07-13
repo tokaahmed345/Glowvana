@@ -22,28 +22,19 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
     <img src="screenshots/auth.png" width="700" height="600" style="display: block; margin: 0 auto;">
   </div>
 </div>
-  
-
-  <!-- Morning Theme Routine (2 صور) -->
-  <h2>☀️ Morning Routine </h2>
+    <h2>☀️ Morning Routine </h2>
 <div style="text-align: center;">
   <div style="margin-bottom: 30px;">
     <img src="screenshots/morning_routine.png" width="500" height="400" style="display: block; margin: 0 auto;">
       <img src="screenshots/morning_routine_2.png" width="500" height="400" style="display: block; margin: 0 auto;">
   </div>
-
-
   <!-- باقي الصور -->
-  <div style="text-align: center;">
-    <img src="screenshots/Screenshot_1752080805.png" width="200" height="200" style="display: block;">
-    <p>Screen</p>
+    <h2>🌙 Night  Routine </h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/night_routine.png" width="500" height="400" style="display: block; margin: 0 auto;">
+      <img src="screenshots/night_routine2.png" width="500" height="400" style="display: block; margin: 0 auto;">
   </div>
-  <div style="text-align: center;">
-    <img src="screenshots/Screenshot_1752081034.png" width="200" height="200" style="display: block;">
-    <p>Screen</p>
-  </div>
-  <div style="text-align: center;">
-    <img src="screenshots/Screenshot_1752081040.png" width="200" height="200" style="display: block;">
     <p>Screen</
 
 
