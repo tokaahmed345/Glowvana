@@ -8,7 +8,6 @@ import 'package:glowvana/core/utils/theme/app_theme.dart';
 import 'package:glowvana/core/utils/theme/theme_cubit/theme_cubit.dart';
 import 'package:glowvana/firebase_options.dart';
 import 'package:hive_flutter/adapters.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -16,14 +15,10 @@ void main() async {
   );
   setUp();
   await Hive.initFlutter();
-
   await Hive.openBox(UserSettingsStorage.boxName);
-    await getIt<UserSettingsStorage>().initializeDefaults();
-
-
+  await getIt<UserSettingsStorage>().initializeDefaults();
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
