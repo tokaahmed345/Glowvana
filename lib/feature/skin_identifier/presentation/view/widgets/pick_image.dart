@@ -15,14 +15,20 @@ class PickImage extends StatelessWidget {
         } else if (state is PredictionResult) {
           return Column(
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.4,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.white.withOpacity(0.5)),
-                  borderRadius: BorderRadius.circular(16),
+              GestureDetector(
+                onTap:() =>  context.read<PickAndDetectImage>().pickImageFromGallery(),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.white.withOpacity(0.5)),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                
+                    child: Image.file(state.image, fit: BoxFit.cover)),
                 ),
-                child: Image.file(state.image, fit: BoxFit.cover),
               ),
               const SizedBox(height: 10),
               Text.rich(TextSpan(children: [

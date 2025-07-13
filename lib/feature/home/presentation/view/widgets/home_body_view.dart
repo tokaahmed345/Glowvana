@@ -25,11 +25,13 @@ class HomeBodyView extends StatelessWidget {
     final userName = user?.displayName?.split(' ').first ?? "Beautiful";
     final themeCubit = context.read<ThemeCubit>();
     final themeType = Theme.of(context);
-    
 
     return Stack(
       children: [
-      const   CustomBackgrounds(nightBackgroundImage: AppAssets.nightHomeBackground,morningBackgroundImage: AppAssets.morningHomeBackground,),
+        const CustomBackgrounds(
+          nightBackgroundImage: AppAssets.nightHomeBackground,
+          morningBackgroundImage: AppAssets.morningHomeBackground,
+        ),
         Positioned.fill(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16),
@@ -60,8 +62,10 @@ class HomeBodyView extends StatelessWidget {
                                           cubit.getRoutineSteps(
                                               skinType, 'morning');
                                           themeCubit.switchToMorning();
-                                                                                      getIt<RoutineTrackerCubit>().loadRoutine(skinType: skinType, routineType: 'morning');
-
+                                          getIt<RoutineTrackerCubit>()
+                                              .loadRoutine(
+                                                  skinType: skinType,
+                                                  routineType: 'morning');
                                         },
                                         color: cubit.currentRoutine == 'morning'
                                             ? AppColors.brown
@@ -74,8 +78,10 @@ class HomeBodyView extends StatelessWidget {
                                     child: CustomElevatedButton(
                                         text: "Night Routine",
                                         onPressed: () {
-                                            
-                                              getIt<RoutineTrackerCubit>().loadRoutine(skinType: skinType, routineType: 'night');
+                                          getIt<RoutineTrackerCubit>()
+                                              .loadRoutine(
+                                                  skinType: skinType,
+                                                  routineType: 'night');
                                           context
                                               .read<RoutineStepsCubit>()
                                               .getRoutineSteps(

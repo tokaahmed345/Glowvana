@@ -7,9 +7,8 @@ import 'package:glowvana/feature/tracking/presentation/view/widgets/custom_routi
 import 'package:glowvana/feature/tracking/presentation/view/widgets/custom_track_masks.dart';
 import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_cubit.dart';
 import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_state.dart';
-
 class TrackerViewBody extends StatelessWidget {
-  const TrackerViewBody({super.key});
+const TrackerViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,7 +28,6 @@ class TrackerViewBody extends StatelessWidget {
                     if (state is RoutineTrackerFailure) {
                       return Center(child: Text(state.message));
                     }
-
                     final steps =
                         state is RoutineTrackerSuccess ? state.steps : [];
                     final isMaskChecked =
@@ -38,7 +36,6 @@ class TrackerViewBody extends StatelessWidget {
                         (isMaskChecked ? 1 : 0);
                     final total = steps.length + 1;
                     final progress = total > 0 ? completed / total : 0;
-
                     return Column(
                       children: [
                         CustomProgressIndicator(
@@ -65,8 +62,7 @@ class TrackerViewBody extends StatelessWidget {
                           onChanged: (val) {
                             context
                                 .read<RoutineTrackerCubit>()
-                                .toggleMaskUsage(val ?? false);
-                          },
+                                .toggleMaskUsage(val ?? false); },
                         ),
                       ],
                     );

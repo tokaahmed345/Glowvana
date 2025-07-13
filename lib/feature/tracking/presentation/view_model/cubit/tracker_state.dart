@@ -13,6 +13,7 @@ class RoutineTrackerLoading extends RoutineTrackerState {}
 class RoutineTrackerSuccess extends RoutineTrackerState {
   final List<RoutineModel> steps;
     final bool maskUsed;
+    
   RoutineTrackerSuccess(this.steps, { this.maskUsed=false});
 
   double get progress => steps.isEmpty

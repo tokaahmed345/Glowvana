@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glowvana/core/utils/widgets/shimmer_placeholder.dart';
 import 'package:glowvana/feature/masks/presentation/view/widgets/card_mask.dart';
 import 'package:glowvana/feature/masks/presentation/view_model/cubit/mask_skin_cubit.dart';
 
@@ -31,8 +31,15 @@ class CustomMasksList extends StatelessWidget {
         } else if (state is MaskSkinFailure) {
           return Text(state.errorMessage);
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) => Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+              child: ShimmerPlaceholder(
+                height: MediaQuery.of(context).size.height * .6,
+              ),
+            ),
           );
         }
       },

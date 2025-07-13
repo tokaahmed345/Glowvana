@@ -93,6 +93,10 @@ class _LogInBodyViewState extends State<LogInBodyView> {
                           isVisibilty ? Icons.visibility : Icons.visibility_off,
                       obscureText: !isVisibilty,
                     ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10.0),
+                      child: Align(alignment: Alignment.topRight,child: Text('Forget Password')),
+                    ),
                     const Spacer(),
                     InkWell(
                         onTap: () {

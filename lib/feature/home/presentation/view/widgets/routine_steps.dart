@@ -25,6 +25,8 @@ class RoutineSteps extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        height:  MediaQuery.of(context).size.height * .3,
+        width: double.infinity,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: theme.cardColor,
@@ -48,7 +50,7 @@ class RoutineSteps extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: 18),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
 import 'package:glowvana/core/utils/helpers/cache_image/cache_image_hive.dart';
 
@@ -43,10 +44,10 @@ class _CachedImageFromHiveState extends State<CachedImageFromHive> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return const SizedBox(
+      return  SizedBox(
         width: 60,
         height: 60,
-        child: Center(child: CircularProgressIndicator()),
+        child: Center(child:SpinKitFadingCircle (color: Theme.of(context).cardColor,)),
       );
     } else if (imageBytes != null) {
       return ClipRRect(

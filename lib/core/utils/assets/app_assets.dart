@@ -13,7 +13,6 @@ static const String backgroundTracker='assets/images/background_tracker.jfif';
 static const String logInBackground='assets/images/Auth_background.jfif';
 static const String signUpBackground='assets/images/Auth_background.jfif';
 static const String miniMask='assets/images/mini_mask.png';
-static const String lottieCelebration='assets/images/Celebrations Begin.json';
 static const String defaultUser='assets/images/default_user.png';
 static const String nightBackgroundTracker ='assets/images/background_night_tracker.png';
 static const String nightProfile='assets/images/night_profile.png';
