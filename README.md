@@ -1,33 +1,46 @@
 <h1>🌟 Glowvana – Skincare Routine App</h1>
 
 <p>
-Glowvana is a Flutter mobile app designed to help users build personalized skincare routines based on their skin type (dry, oily, or normal). It offers daily morning ☀️ and night 🌙 steps, recommends suitable products, tracks user progress, and allows users to view or create custom face masks.
+Glowvana is a Flutter mobile app designed to help users build personalized skincare routines based on their skin type (dry, oily, or combination). It offers daily morning ☀️ and night 🌙 steps, recommends suitable products, tracks user progress, and allows users to view or create custom face masks. If the user is unsure about their skin type, the app uses AI-powered face scanning to analyze and detect the skin type automatically.
 </p>
+
 
 <hr>
 
 <h2>📸 Screenshots</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="screenshots/Screenshot_1752080789.png" width="200">
-  <img src="screenshots/Screenshot_1752080795.png" width="200">
-  <img src="screenshots/Screenshot_1752080798.png" width="200">
-  <img src="screenshots/Screenshot_1752080801.png" width="200">
-  <img src="screenshots/Screenshot_1752080805.png" width="200">
-  <img src="screenshots/Screenshot_1752081034.png" width="200">
-  <img src="screenshots/Screenshot_1752081040.png" width="200">
-  <img src="screenshots/Screenshot_1752081053.png" width="200">
-  <img src="screenshots/Screenshot_1752081084.png" width="200">
-  <img src="screenshots/Screenshot_1752081089.png" width="200">
-  <img src="screenshots/Screenshot_1752081098.png" width="200">
-  <img src="screenshots/Screenshot_1752081106.png" width="200">
-  <img src="screenshots/Screenshot_1752081112.png" width="200">
-  <img src="screenshots/Screenshot_1752081118.png" width="200">
+<div style="display: flex; flex-wrap: wrap; gap: 15px;">
+<h2>🚀 Splash & Onboarding</h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/splash_onbaording.png" width="500" height="400" style="display: block; margin: 0 auto;">
+      <img src="screenshots/onboarding.png" width="500" height="400" style="display: block; margin: 0 auto;">
+  </div>
 </div>
-<hr>
+<h2 style="text-align: center;">🔐 Authentication</h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/auth.png" width="700" height="600" style="display: block; margin: 0 auto;">
+  </div>
+</div>
+    <h2>☀️ Morning Routine </h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/morning_routine.png" width="500" height="400" style="display: block; margin: 0 auto;">
+      <img src="screenshots/morning_routine_2.png" width="500" height="400" style="display: block; margin: 0 auto;">
+  </div>
+  <!-- باقي الصور -->
+    <h2>🌙 Night  Routine </h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/night_routine.png" width="500" height="400" style="display: block; margin: 0 auto;">
+      <img src="screenshots/night_routine2.png" width="500" height="400" style="display: block; margin: 0 auto;">
+  </div>
+    <p>Screen</
+
 
 <h2>✨ Features</h2>
 <ul>
-  <li>👩‍🔬 Personalized skincare routines by skin type (Dry, Oily, Normal)</li>
+  <li>👩‍🔬 Personalized skincare routines by skin type (Dry, Oily, combination)</li>
   <li>🌞 Morning & 🌙 Night routines with separate themes</li>
   <li>🧴 Recommended products for each step (with why & how)</li>
   <li>🧪 Add & explore DIY masks for each skin type</li>
@@ -131,6 +144,30 @@ Pull requests are welcome! For ideas, feedback, or improvements – feel free to
 </p>
 
 <hr>
+<hr>
+
+<h2>🧩 Dependencies</h2>
+<p>The app uses several powerful Flutter packages to achieve a smooth, responsive, and intelligent skincare experience:</p>
+
+<ul>
+  <li><code>awesome_dialog</code> – Beautiful animated dialogs</li>
+  <li><code>bloc</code> / <code>flutter_bloc</code> – State management (Cubit)</li>
+  <li><code>cloud_firestore</code> / <code>firebase_core</code> / <code>firebase_auth</code> – Firebase backend</li>
+  <li><code>cupertino_icons</code> – iOS style icons</li>
+  <li><code>dartz</code> – Functional programming utilities</li>
+  <li><code>equatable</code> – Value comparison for Cubit states</li>
+  <li><code>flutter_spinkit</code> – Loading spinners</li>
+  <li><code>get_it</code> – Dependency injection</li>
+  <li><code>go_router</code> – Declarative navigation</li>
+  <li><code>hive</code> / <code>hive_flutter</code> / <code>hive_generator</code> – Local storage (offline caching, step tracking, etc.)</li>
+  <li><code>http</code> – API requests</li>
+  <li><code>image</code> – Image processing</li>
+  <li><code>image_picker</code> – Capture and select user images</li>
+  <li><code>shimmer</code> – Loading placeholders</li>
+  <li><code>tflite_flutter</code> – Run AI/ML models for face scanning</li>
+  <li><code>url_launcher</code> – Open links from the app</li>
+</ul>
+
 
 <h2>📧 Contact</h2>
 <p>
