@@ -7,23 +7,43 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
 <hr>
 
 <h2>📸 Screenshots</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="screenshots/splash_onbaording.png" width="200" ,height= "200">
-  <img src="screenshots/Screenshot_1752080795.png" width="200">
-  <img src="screenshots/Screenshot_1752080798.png" width="200">
-  <img src="screenshots/Screenshot_1752080801.png" width="200">
-  <img src="screenshots/Screenshot_1752080805.png" width="200">
-  <img src="screenshots/Screenshot_1752081034.png" width="200">
-  <img src="screenshots/Screenshot_1752081040.png" width="200">
-  <img src="screenshots/Screenshot_1752081053.png" width="200">
-  <img src="screenshots/Screenshot_1752081084.png" width="200">
-  <img src="screenshots/Screenshot_1752081089.png" width="200">
-  <img src="screenshots/Screenshot_1752081098.png" width="200">
-  <img src="screenshots/Screenshot_1752081106.png" width="200">
-  <img src="screenshots/Screenshot_1752081112.png" width="200">
-  <img src="screenshots/Screenshot_1752081118.png" width="200">
-</div>
-<hr>
+<div style="display: flex; flex-wrap: wrap; gap: 15px;">
+
+  <!-- Splash & Onboarding -->
+  <div style="text-align: center;">
+    <img src="screenshots/splash_onbaording.png" width="200" height="200" style="display: block;">
+    <p>Splash & Onboarding</p>
+  </div>
+
+  <!-- Auth -->
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752080795.png" width="300" height="200" style="display: block;">
+    <p>Auth</p>
+  </div>
+
+  <!-- Morning Theme Routine (2 صور) -->
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752080798.png" width="200" height="200" style="display: block;">
+    <p>Morning Routine 1</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752080801.png" width="200" height="200" style="display: block;">
+    <p>Morning Routine 2</p>
+  </div>
+
+  <!-- باقي الصور -->
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752080805.png" width="200" height="200" style="display: block;">
+    <p>Screen</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752081034.png" width="200" height="200" style="display: block;">
+    <p>Screen</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/Screenshot_1752081040.png" width="200" height="200" style="display: block;">
+    <p>Screen</
+
 
 <h2>✨ Features</h2>
 <ul>
