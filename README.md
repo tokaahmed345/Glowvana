@@ -48,6 +48,8 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
   <li>🖼️ Image upload & real-time card preview</li>
   <li>🗂️ Hive caching for offline access</li>
   <li>🎯 Clean MVVM architecture (Model - Repository - ViewModel - UI)</li>
+  <li>🎥 Users can view detailed tutorials for each routine step or face mask</li>  <!-- السطر الجديد -->
+
 </ul>
 
 <hr>
