@@ -144,6 +144,30 @@ Pull requests are welcome! For ideas, feedback, or improvements – feel free to
 </p>
 
 <hr>
+<hr>
+
+<h2>🧩 Dependencies</h2>
+<p>The app uses several powerful Flutter packages to achieve a smooth, responsive, and intelligent skincare experience:</p>
+
+<ul>
+  <li><code>awesome_dialog</code> – Beautiful animated dialogs</li>
+  <li><code>bloc</code> / <code>flutter_bloc</code> – State management (Cubit)</li>
+  <li><code>cloud_firestore</code> / <code>firebase_core</code> / <code>firebase_auth</code> – Firebase backend</li>
+  <li><code>cupertino_icons</code> – iOS style icons</li>
+  <li><code>dartz</code> – Functional programming utilities</li>
+  <li><code>equatable</code> – Value comparison for Cubit states</li>
+  <li><code>flutter_spinkit</code> – Loading spinners</li>
+  <li><code>get_it</code> – Dependency injection</li>
+  <li><code>go_router</code> – Declarative navigation</li>
+  <li><code>hive</code> / <code>hive_flutter</code> / <code>hive_generator</code> – Local storage (offline caching, step tracking, etc.)</li>
+  <li><code>http</code> – API requests</li>
+  <li><code>image</code> – Image processing</li>
+  <li><code>image_picker</code> – Capture and select user images</li>
+  <li><code>shimmer</code> – Loading placeholders</li>
+  <li><code>tflite_flutter</code> – Run AI/ML models for face scanning</li>
+  <li><code>url_launcher</code> – Open links from the app</li>
+</ul>
+
 
 <h2>📧 Contact</h2>
 <p>
