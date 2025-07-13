@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glowvana/core/utils/helpers/user_setting_storage/hive_helper.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
 import 'package:glowvana/feature/home/data/models/routine_model.dart';
-import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl2.dart';
+import 'package:glowvana/feature/tracking/data/repos/tracker_repo.dart';
 import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_state.dart';
 
 class RoutineTrackerCubit extends Cubit<RoutineTrackerState> {
@@ -35,12 +35,11 @@ Future<void> loadRoutine({
           }
         }
          getIt.get<UserSettingsStorage>().setMaskUsedToday(false); 
-
         final resetSteps = steps.map((e) => e.copyWith(isDone: false)).toList();
         emit(RoutineTrackerSuccess(resetSteps,maskUsed: false));
         await getIt.get<UserSettingsStorage>().saveLastRoutine(now);
       } else {
-          final maskUsed =   getIt.get<UserSettingsStorage>().getMaskUsedToday(); // 👈 Load saved value
+          final maskUsed =   getIt.get<UserSettingsStorage>().getMaskUsedToday();
 
         emit(RoutineTrackerSuccess(steps,maskUsed: maskUsed));
       }
