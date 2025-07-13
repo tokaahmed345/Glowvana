@@ -152,8 +152,9 @@ Pull requests are welcome! For ideas, feedback, or improvements – feel free to
 <p>The app uses several powerful Flutter packages to achieve a smooth, responsive, and intelligent skincare experience:</p>
 
 <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-  <img src="screenshots/package.PNG alt="Dependencies List" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="screenshots/package.PNG" alt="Dependencies List" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
+
 
 
 <h2>📧 Contact</h2>
