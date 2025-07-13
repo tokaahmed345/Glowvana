@@ -1,8 +1,9 @@
 <h1>🌟 Glowvana – Skincare Routine App</h1>
 
 <p>
-Glowvana is a Flutter mobile app designed to help users build personalized skincare routines based on their skin type (dry, oily, or combination). It offers daily morning ☀️ and night 🌙 steps, recommends suitable products, tracks user progress, and allows users to view or create custom face masks.
+Glowvana is a Flutter mobile app designed to help users build personalized skincare routines based on their skin type (dry, oily, or combination). It offers daily morning ☀️ and night 🌙 steps, recommends suitable products, tracks user progress, and allows users to view or create custom face masks. If the user is unsure about their skin type, the app uses AI-powered face scanning to analyze and detect the skin type automatically.
 </p>
+
 
 <hr>
 
