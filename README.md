@@ -25,7 +25,7 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
   
 
   <!-- Morning Theme Routine (2 صور) -->
-  <h2> Morning Routine </h2>
+  <h2>☀️ Morning Routine </h2>
 <div style="text-align: center;">
   <div style="margin-bottom: 30px;">
     <img src="screenshots/morning_routine.png" width="500" height="400" style="display: block; margin: 0 auto;">
