@@ -8,7 +8,7 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
 
 <h2>📸 Screenshots</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="screenshots/Screenshot_1752080789.png" width="200">
+  <img src="screenshots/splash_onbaording.png" width="200">
   <img src="screenshots/Screenshot_1752080795.png" width="200">
   <img src="screenshots/Screenshot_1752080798.png" width="200">
   <img src="screenshots/Screenshot_1752080801.png" width="200">
