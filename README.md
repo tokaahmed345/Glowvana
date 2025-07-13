@@ -16,12 +16,13 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
       <img src="screenshots/onboarding.png" width="500" height="400" style="display: block; margin: 0 auto;">
   </div>
 </div>
-
-  <!-- Auth -->
-  <div style="text-align: center;">
-    <img src="screenshots/Screenshot_1752080795.png" width="300" height="200" style="display: block;">
-    <p>Auth</p>
+<h2 style="text-align: center;">🔐 Authentication</h2>
+<div style="text-align: center;">
+  <div style="margin-bottom: 30px;">
+    <img src="screenshots/auth.png" width="700" height="400" style="display: block; margin: 0 auto;">
   </div>
+</div>
+  
 
   <!-- Morning Theme Routine (2 صور) -->
   <div style="text-align: center;">
@@ -49,7 +50,7 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
 
 <h2>✨ Features</h2>
 <ul>
-  <li>👩‍🔬 Personalized skincare routines by skin type (Dry, Oily, Normal)</li>
+  <li>👩‍🔬 Personalized skincare routines by skin type (Dry, Oily, combination)</li>
   <li>🌞 Morning & 🌙 Night routines with separate themes</li>
   <li>🧴 Recommended products for each step (with why & how)</li>
   <li>🧪 Add & explore DIY masks for each skin type</li>
