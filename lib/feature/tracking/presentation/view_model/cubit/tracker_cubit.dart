@@ -2,12 +2,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glowvana/core/utils/helpers/user_setting_storage/hive_helper.dart';
 import 'package:glowvana/core/utils/service_locator/service_locator.dart';
 import 'package:glowvana/feature/home/data/models/routine_model.dart';
-import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl.dart';
+import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl2.dart';
 import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_state.dart';
 
 class RoutineTrackerCubit extends Cubit<RoutineTrackerState> {
-  final TrackerRepo routineRepo;
-
+  final TrackerRepo routineRepo; 
   RoutineTrackerCubit(this.routineRepo) : super(RoutineTrackerInitial());
 Future<void> loadRoutine({
   required String skinType,

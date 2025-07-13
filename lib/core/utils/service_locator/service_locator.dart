@@ -16,8 +16,8 @@ import 'package:glowvana/feature/masks/data/repos/mask_repo.dart';
 import 'package:glowvana/feature/masks/data/repos/repo_impl.dart';
 import 'package:glowvana/feature/masks/presentation/view_model/cubit/mask_skin_cubit.dart';
 import 'package:glowvana/feature/skin_identifier/presentation/view_model/cubits/cubit/detect_and_pick_image.dart';
-import 'package:glowvana/feature/tracking/data/repos/tracker_repo.dart';
 import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl.dart';
+import 'package:glowvana/feature/tracking/data/repos/tracker_repo_impl2.dart';
 import 'package:glowvana/feature/tracking/presentation/view_model/cubit/tracker_cubit.dart';
 
 final getIt = GetIt.instance;
