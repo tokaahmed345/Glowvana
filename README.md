@@ -12,12 +12,10 @@ Glowvana is a Flutter mobile app designed to help users build personalized skinc
 <h2>Splash & Onboarding</h2>
 <div style="text-align: center;">
   <div style="margin-bottom: 30px;">
-    <p style="font-size: 18px; margin-bottom: 8px;">🚀 Splash Screen</p>
     <img src="screenshots/splash_onbaording.png" width="500" height="400" style="display: block; margin: 0 auto;">
   </div>
 
   <div>
-    <p style="font-size: 18px; margin-bottom: 8px;">📋 Onboarding</p>
     <img src="screenshots/onboarding.png" width="500" height="400" style="display: block; margin: 0 auto;">
   </div>
 </div>
